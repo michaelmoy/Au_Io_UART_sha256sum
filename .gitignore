@@ -1,0 +1,9 @@
+Au_Io_UART_sha256sum.sim
+.Xil
+Au_Io_UART_sha256sum.cache
+Au_Io_UART_sha256sum.hw
+Au_Io_UART_sha256sum.runs
+*.prm
+/*.jou
+/*.log
+/*.str

@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
+// Company: MoySys, LLC
+// Engineer: Michael Moy
 // 
 // Create Date: 09/28/2020 07:57:48 AM
 // Design Name: 

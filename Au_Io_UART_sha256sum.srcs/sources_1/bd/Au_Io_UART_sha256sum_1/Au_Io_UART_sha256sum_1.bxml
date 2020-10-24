@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="39">
   <CompositeFile CompositeFileTopName="Au_Io_UART_sha256sum_1" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1603421171"/>
-    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1603421171"/>
-    <Generation Name="SIMULATION" State="RESET" Timestamp="1603421171"/>
-    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1603421171"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1603562822"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1603562822"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1603562822"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1603562822"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0\Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0.xci" Type="IP">
         <Instance HierarchyPath="IoBd_Uart_RX_0"/>
@@ -69,6 +69,44 @@
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="synth\Au_Io_UART_sha256sum_1.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+      </File>
+      <File Name="sim\Au_Io_UART_sha256sum_1.v" Type="Verilog">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="Au_Io_UART_sha256sum_1_ooc.xdc" Type="XDC">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="OUT_OF_CONTEXT"/>
+      </File>
+      <File Name="hw_handoff\Au_Io_UART_sha256sum_1.hwh" Type="HwHandoff">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="hw_handoff\Au_Io_UART_sha256sum_1_bd.tcl">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="synth\Au_Io_UART_sha256sum_1.hwdef">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="HW_HANDOFF"/>
+      </File>
+      <File Name="sim\Au_Io_UART_sha256sum_1.protoinst">
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
+        <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>

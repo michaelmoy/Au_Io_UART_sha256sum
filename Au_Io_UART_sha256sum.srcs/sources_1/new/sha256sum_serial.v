@@ -93,10 +93,10 @@ always @(posedge clk or negedge rst_n) begin
 		state_256_serial <= 0;
 		sha_f <= 0;
 		sha_n <= 0;  
-//		val3 <= 0;
-//		val2 <= 0;
-//		val1 <= 0;
-//		val0 <= 0;
+		val3 <= 0;
+		val2 <= 0;
+		val1 <= 0;
+		val0 <= 0;
 		tx_data <= 8'h31;
 		TestBlock1 <= 0;
 		Test_bits_left <= 0 ;
@@ -117,8 +117,6 @@ always @(posedge clk or negedge rst_n) begin
 			// read in data from the UART for the Total User Data bit count, in hex.
 			0: begin
 			
-			val3 <= state_256_serial[3:0];
-			
 				 // keep reading
 				if( bytes_left != 0 ) begin
 				
@@ -134,7 +132,7 @@ always @(posedge clk or negedge rst_n) begin
 				
 					// calculate the total bits to work on and the padded total bit count
 					Test_bits_left <= Tot_User_Bit_cnt;
-					TestLen1 <= (Tot_User_Bit_cnt < 512 ? 512 : ( Tot_User_Bit_cnt < 1024 ? 1024 : (1024+512) )) + (Tot_User_Bit_cnt[8:0] > (512-64-8) ? 512 : 0);	
+					TestLen1 <= (Tot_User_Bit_cnt & 64'hffff_fe00) + (Tot_User_Bit_cnt[8:0] > (512-64-8) ? 1024 : 512);	
 					
 					// set the number of UART bytes to read in the first round
 					if( Tot_User_Bit_cnt >= 512 ) begin
@@ -158,8 +156,6 @@ always @(posedge clk or negedge rst_n) begin
 			// read in User data from the UART for the Data block of up to 512 bits
 			14: begin
 			
-			val3 <= state_256_serial[3:0];
-			
 				// keep reading
 				if( bytes_left != 0 ) begin				
 					if( rx_avail ) begin 
@@ -179,20 +175,19 @@ always @(posedge clk or negedge rst_n) begin
 						bytes_pad <= bytes_pad - 1;
 						end
 						
-					// do any block updates needed before sending it on
+					// do block updates that are needed before sending it on
 					else begin
-				
-//						if( Tot_User_Bit_cnt > (512-64-8) )
-//							sha_n <= 1; 
 						
 						if( Test_bits_left < 512 ) begin
 						
 							// ends in this block with room for the EOD and Total Bit Count values
 							if( Test_bits_left <= (512-64-8) && Tot_User_Bit_cnt[8:0] != 0 ) begin
 								TestBlock1[63:0] <= Tot_User_Bit_cnt;
-								TestBlock1[ (512-8-Test_bits_left) +: 8] <= 8'h80;
+								if( sha_eod_done == 0 ) begin
+									TestBlock1[ (512-8-Test_bits_left) +: 8] <= 8'h80;
+									sha_eod_done <= 1 ;
+									end
 								state_256_serial <= 2;
-// it is to early for 65 A's   sha_f <= 1;
 								end
 							
 							else begin
@@ -200,40 +195,37 @@ always @(posedge clk or negedge rst_n) begin
 								// ended, so put in Total Bit Count and the EOD if it is needed
 								if( Test_bits_left == 0 ) begin
 									TestBlock1[63:0] <= Tot_User_Bit_cnt;
-		// sometimes not needed ??
-									TestBlock1[511:504] <= 8'h80;
+									if( sha_eod_done == 0 ) begin
+										TestBlock1[511:504] <= 8'h80;
+										sha_eod_done <= 1 ;
+										end
 									TestBlock1[503:64] <= 0;
 									state_256_serial <= 2;
 									end
 									
 								// EOD is in this block but not the Total Bit Count
 								else begin
-									TestBlock1[ (512-8-Test_bits_left) +: 8] <= 8'h80;
+									if( sha_eod_done == 0 ) begin
+										TestBlock1[ (512-8-Test_bits_left) +: 8] <= 8'h80;
+										sha_eod_done <= 1 ;
+										end
 									state_256_serial <= 15;
 									end
 								end
 							end
 						else begin
-							state_256_serial <= 15;							
-// too early							sha_f <= 1;		
+							state_256_serial <= 15;	
 							Test_bits_left <= Test_bits_left - 512 ;
 							end					
 						end
 					end	
 				end
 				
-				
-				
-			// wait for the block to get in
+			// wait for the block to get pulled in
 			15: begin
 				
 				if( sha_act == 1 && sha_cs == 0 ) begin
 				
-//					if( Test_bits_left >= 512 )
-//						Test_bits_left <= Test_bits_left - 512 ;
-//					else
-//						Test_bits_left <= 0;
-						
 					state_256_serial <= 14;  
 					 
 					sha_f <= 0; 
@@ -249,10 +241,10 @@ always @(posedge clk or negedge rst_n) begin
 						bytes_left[5:0] <= Tot_User_Bit_cnt[8:3];
 						bytes_pad <= 64 - Tot_User_Bit_cnt[8:3];
 						end		
-			TestBlock1 <= 0;    
+					TestBlock1 <= 0;    
 					end
 				else begin
-					sha_f <= 1; // needs to be set to get this last on pulled.		
+/* Here or below?? */					sha_f <= 1; // needs to be set to get this last on pulled.		
 					end					
 			
 				end
@@ -261,22 +253,17 @@ always @(posedge clk or negedge rst_n) begin
 			// wait for the last User Block to get finished and do the Padded Block next
 			2: begin
 			
-			val3 <= state_256_serial[3:0];
-			
 				if( sha_act == 1 && sha_cs == 0 ) begin
 					state_256_serial <= 3;            
 					sha_n <= 0; 
 					sha_f <= 0;		
 					end
 				else begin
-//					sha_n <= 0; 
 					sha_f <= 1; // needs to be set to get this last on pulled.		
 					end
 				end
 
 			3: begin
-			
-			val3 <= state_256_serial[3:0];
 			
 				if( sha_rdy != 0 ) begin
 					state_256_serial <= 4;	
@@ -284,21 +271,21 @@ always @(posedge clk or negedge rst_n) begin
 				end
 
 			4: begin
-			
-			val3 <= state_256_serial[3:0];	
 				
 					state_256_serial <= 5;
 					nibbles_left <= 64;
 					tx_Answer <= Answer;
-					my_Answer <= Answer;		
+					my_Answer <= Answer;	
+					val3 <= Answer[255 : 252];
+					val2 <= Answer[251 : 248];
+					val1 <= Answer[247 : 244];
+					val0 <= Answer[243 : 240];
 				end
 				
 
 
 			// print out the answer in ASCII using the UART
 			5: begin
-			
-			val3 <= state_256_serial[3:0];
 			
 				if( nibbles_left == 0 ) begin
 					state_256_serial <= 6;	
@@ -320,8 +307,6 @@ always @(posedge clk or negedge rst_n) begin
 			// print out a <lf>
 			6: begin
 			
-			val3 <= state_256_serial[3:0];
-			
 				if( tx_empty && tx_send == 0 ) begin
 					tx_data <= 8'h0a;		
 					tx_send <= 1;
@@ -333,8 +318,6 @@ always @(posedge clk or negedge rst_n) begin
 				end
 
 			7: begin
-			
-//			val3 <= state_256_serial[3:0];
 			
 					tx_send <= 0;	
 					if( counter[29:28] == 0 ) begin
@@ -366,7 +349,6 @@ always @(posedge clk or negedge rst_n) begin
 			default: begin			
 				val3 <= state_256_serial[3:0];
 			end
-				
 						
 		endcase
 		

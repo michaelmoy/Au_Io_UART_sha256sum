@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="751000001fs"></ZoomEndTime>
+      <ZoomEndTime time="393000001fs"></ZoomEndTime>
       <Cursor1Time time="0fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="195"></NameColumnWidth>
+      <NameColumnWidth column_width="187"></NameColumnWidth>
       <ValueColumnWidth column_width="58"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="20" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/top_7seg_Br_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -56,6 +56,22 @@
       <obj_property name="ElementShortName">rx_avail</obj_property>
       <obj_property name="ObjectShortName">rx_avail</obj_property>
    </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/val3" type="array">
+      <obj_property name="ElementShortName">val3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">val3[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/val2" type="array">
+      <obj_property name="ElementShortName">val2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">val2[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/val1" type="array">
+      <obj_property name="ElementShortName">val1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">val1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/val0" type="array">
+      <obj_property name="ElementShortName">val0[3:0]</obj_property>
+      <obj_property name="ObjectShortName">val0[3:0]</obj_property>
+   </wvobject>
    <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/Answer" type="array">
       <obj_property name="ElementShortName">Answer[255:0]</obj_property>
       <obj_property name="ObjectShortName">Answer[255:0]</obj_property>
@@ -76,22 +92,6 @@
       <obj_property name="ElementShortName">Tot_User_Bit_cnt[63:0]</obj_property>
       <obj_property name="ObjectShortName">Tot_User_Bit_cnt[63:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/tb_cs" type="logic">
-      <obj_property name="ElementShortName">tb_cs</obj_property>
-      <obj_property name="ObjectShortName">tb_cs</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/tb_we" type="logic">
-      <obj_property name="ElementShortName">tb_we</obj_property>
-      <obj_property name="ObjectShortName">tb_we</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/tb_address" type="array">
-      <obj_property name="ElementShortName">tb_address[27:0]</obj_property>
-      <obj_property name="ObjectShortName">tb_address[27:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/top_7seg_Br_tb/val3" type="array">
-      <obj_property name="ElementShortName">val3[3:0]</obj_property>
-      <obj_property name="ObjectShortName">val3[3:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/bytes_left" type="array">
       <obj_property name="ElementShortName">bytes_left[7:0]</obj_property>
       <obj_property name="ObjectShortName">bytes_left[7:0]</obj_property>
@@ -99,5 +99,29 @@
    <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/bytes_pad" type="array">
       <obj_property name="ElementShortName">bytes_pad[7:0]</obj_property>
       <obj_property name="ObjectShortName">bytes_pad[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/write_data" type="array">
+      <obj_property name="ElementShortName">write_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">write_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/address" type="array">
+      <obj_property name="ElementShortName">address[27:0]</obj_property>
+      <obj_property name="ObjectShortName">address[27:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/block_we" type="logic">
+      <obj_property name="ElementShortName">block_we</obj_property>
+      <obj_property name="ObjectShortName">block_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/mode_we" type="logic">
+      <obj_property name="ElementShortName">mode_we</obj_property>
+      <obj_property name="ObjectShortName">mode_we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/top_7seg_Br_tb/sha256Serial/sha256_ctrl/sha256_calc_engine/we" type="logic">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
    </wvobject>
 </wave_config>

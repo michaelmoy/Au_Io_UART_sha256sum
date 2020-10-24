@@ -174,6 +174,14 @@ sha256sum_serial sha256Serial(
     
     initial begin
 
+      $display(" ");
+      $display("-----------------------------------------------------");
+      $display("--                                                 --");
+      $display("-- Testbench for Michael Moy                       --");
+      $display("--                                                 --");
+      $display("-----------------------------------------------------");
+      $display("\n");
+	  
 		rx_sim_data = 0;
 		rx_sim_len = 0;
 		rx_sim_req = 0;
@@ -206,7 +214,8 @@ sha256sum_serial sha256Serial(
 // these work so skip them     
 if( rst == 0 ) begin
 
-// send the bit count
+
+		$display("Test: abc");
 		rx_sim_data = 512'h0000000000000018_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 //		rx_sim_data = 512'h00000000000001b00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
@@ -236,14 +245,8 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
 
-
-
-
-
-	
-		
-		
 // reset then do another test		
 		rx_sim_data = 0;
 		rx_sim_len = 0;
@@ -259,9 +262,7 @@ if( rst == 0 ) begin
             #50;
         	end
  
- 
-        
-// send the bit count
+		$display("Test: AAA s 0x1b0 54");
 		rx_sim_data = 512'h00000000_000001b0_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
 		rx_sim_req = 1;
@@ -287,6 +288,7 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
 
 
 		
@@ -307,7 +309,7 @@ if( rst == 0 ) begin
         	end
  
         
-// send the bit count
+		$display("Test: AAA s 0x1b8 55");
 		rx_sim_data = 512'h00000000_000001b8_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
 		rx_sim_req = 1;
@@ -320,6 +322,7 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
+			
 // send the First Block
 		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_00_00000000_00000000;
 		rx_sim_len = 55;
@@ -333,6 +336,7 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
 
 
 		
@@ -351,9 +355,9 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
- 
+
         
-// send the bit count
+		$display("Test: AAA s 0x1b8 56");
 		rx_sim_data = 512'h00000000_000001b8_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
 		rx_sim_req = 1;
@@ -366,9 +370,10 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
+			
 // send the First Block
 		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414161_00_00000000_00000000;
-		rx_sim_len = 55;
+		rx_sim_len = 56;
 		rx_sim_req = 1;
         clk =  ! clk;
         #50;
@@ -379,6 +384,7 @@ if( rst == 0 ) begin
             clk =  ! clk;
             #50;
         	end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
 		
 		
 // reset then do another test		
@@ -397,8 +403,7 @@ if( rst == 0 ) begin
         	end
 
 
-       
-// send the bit count
+		$display("Test: AAA s 0x208 65");
 		rx_sim_data = 512'h0000_0000_0000_0208_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
 		rx_sim_req = 1;
@@ -437,11 +442,13 @@ if( rst == 0 ) begin
         clk =  ! clk;
         #50;
 		rx_sim_req = 0;
-        repeat (250) begin
+        repeat (800) begin
             clk =  ! clk;
             #50;
         	end
-		
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
+    
+	
 		
 // reset then do another test		
 		rx_sim_data = 0;
@@ -459,13 +466,76 @@ if( rst == 0 ) begin
         	end
 		
 
-         	
-end // these work so skip them    
+
+//---------------------------------------------------------------------------      
+end // these work so skip them 
+//---------------------------------------------------------------------------
+
+   
+		$display("Test: AAA s 0x3a0 116");
+		rx_sim_data = 512'h0000_0000_0000_03a0_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+		rx_sim_len = 8;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (400) begin
+            clk =  ! clk;
+            #50;
+        	end
+        	
+// send the First Block
+		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_41_41414141_41414141;
+		rx_sim_len = 64;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (800) begin
+            clk =  ! clk;
+            #50;
+        	end
+        	
+// send the Second Block
+		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_41_41414141_41414141;
+		rx_sim_len = 52; // 64;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (800) begin
+            clk =  ! clk;
+            #50;
+        	end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
+	
+	
+ 		
+// reset then do another test		
+		rx_sim_data = 0;
+		rx_sim_len = 0;
+		rx_sim_req = 0;
+        rst = 1;
+        repeat (1000) begin
+            clk =  ! clk;
+            #50;
+        	end
+        rst = 0;
+        repeat (10) begin
+            clk =  ! clk;
+            #50;
+        	end
 		
-	       
-        
-// send the bit count
-		rx_sim_data = 512'h0000_0000_0000_0400_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
+
+			    
+		$display("Test: AAA s 0x9a0 308");
+		rx_sim_data = 512'h0000_0000_0000_09a0_0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000;
 		rx_sim_len = 8;
 		rx_sim_req = 1;
         clk =  ! clk;
@@ -505,20 +575,71 @@ end // these work so skip them
             clk =  ! clk;
             #50;
         	end
-	
-	
- 	    
-        
-        
-        
-        repeat (100000) begin
+        	
+// send the Second Block
+		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_41_41414141_41414141;
+		rx_sim_len = 64;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (800) begin
             clk =  ! clk;
             #50;
-        end
+        	end
+        	
+// send the Second Block
+		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_41_41414141_41414141;
+		rx_sim_len = 64;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (800) begin
+            clk =  ! clk;
+            #50;
+        	end
+        	
+// send the Second Block
+		rx_sim_data = 512'h41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141_41_41414141_41414141;
+		rx_sim_len = 52;
+		rx_sim_req = 1;
+        clk =  ! clk;
+        #50;
+        clk =  ! clk;
+        #50;
+		rx_sim_req = 0;
+        repeat (800) begin
+            clk =  ! clk;
+            #50;
+        	end
+		$display("      %x%x%x%x", val3, val2, val1, val0 );
+	
+ 
+		$display("Done\n");	
+        
+        
+        repeat (10000) begin
+            clk =  ! clk;
+            #50;
+			end
         #200;
         clk =  ! clk;
+		
+		$display(" ");
+		$display("-----------------------------------------------------");
+		$display("--                                                 --");
+		$display("-- Testbench Done                                  --");
+		$display("--                                                 --");
+		$display("-----------------------------------------------------");  
+	  
         end
-            
+  
+	  
 endmodule
 
 

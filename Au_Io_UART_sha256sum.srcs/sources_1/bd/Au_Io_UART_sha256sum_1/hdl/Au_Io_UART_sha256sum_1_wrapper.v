@@ -1,7 +1,7 @@
 //Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2020.1.1 (win64) Build 2960000 Wed Aug  5 22:57:20 MDT 2020
-//Date        : Sat Oct 24 12:07:02 2020
+//Date        : Sat Oct 24 19:37:39 2020
 //Host        : winonssd running 64-bit major release  (build 9200)
 //Command     : generate_target Au_Io_UART_sha256sum_1_wrapper.bd
 //Design      : Au_Io_UART_sha256sum_1_wrapper

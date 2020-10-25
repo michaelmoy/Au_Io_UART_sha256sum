@@ -212,7 +212,7 @@ sha256sum_serial sha256Serial(
         end
         
 // these work so skip them     
-if( rst == 0 ) begin
+if( rst == 1 ) begin
 
 
 		$display("Test: abc");

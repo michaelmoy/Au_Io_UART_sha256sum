@@ -5,11 +5,11 @@
 // 
 // Create Date: 10/18/2020 07:39:00 PM
 // Design Name: 
-// Module Name: IoBd_Uart_RX_SIM
+// Module Name: sha256sum_serial
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: 
+// Description: UART driven sha256sum generator.
 // 
 // Dependencies: 
 // 
@@ -65,8 +65,7 @@ reg [7:0] bytes_pad;
 reg [7:0] state_256_serial;
 
 
-	reg sha_eod_done;
-	reg sha_extra_buff_needed;
+reg sha_eod_done;
 
 wire sha_cs;
 
@@ -105,8 +104,6 @@ always @(posedge clk or negedge rst_n) begin
 		Tot_User_Bit_cnt <= 0;
 		bytes_left <= 8;
 		sha_eod_done <= 0;
-		sha_extra_buff_needed <= 0;
-
 		end
 
 	else begin // Rising edge of clock
@@ -319,31 +316,20 @@ always @(posedge clk or negedge rst_n) begin
 
 			7: begin
 			
-					tx_send <= 0;	
-					if( counter[29:28] == 0 ) begin
-						val3 <= my_Answer[255 : 252];
-						val2 <= my_Answer[251 : 248];
-						val1 <= my_Answer[247 : 244];
-						val0 <= my_Answer[243 : 240];
-						end
-					else  if( counter[29:28] == 1 ) begin
-						val3 <= my_Answer[239 : 236];
-						val2 <= my_Answer[235 : 232];
-						val1 <= my_Answer[231 : 228];
-						val0 <= my_Answer[227 : 224];
-						end
-					else  if( counter[29:28] == 2 ) begin
-						val3 <= my_Answer[223 : 220];
-						val2 <= my_Answer[219 : 216];
-						val1 <= my_Answer[215 : 212];
-						val0 <= my_Answer[211 : 208];
-						end
-					else begin
-						val3 <= my_Answer[207 : 204];
-						val2 <= my_Answer[203 : 200];
-						val1 <= my_Answer[199 : 196];
-						val0 <= my_Answer[195 : 192];
-						end
+					tx_send <= 0;
+			
+					// start over and get another request
+					state_256_serial <= 0;
+					sha_f <= 0;
+					sha_n <= 0;
+					TestBlock1 <= 0;
+					Test_bits_left <= 0 ;
+					TestLen1 <= 0;
+					PadBlock <= 0; 
+					Tot_User_Bit_cnt <= 0;
+					bytes_left <= 8;
+					sha_eod_done <= 0;
+									
 				end	
 							
 			default: begin			

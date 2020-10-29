@@ -36,7 +36,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="310"/>
+    <Option Name="WTXSimLaunchSim" Val="312"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -65,6 +65,15 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/new/IoBd_7segX4.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../xil_7seg_Cu/xil_7seg_Cu.srcs/sources_1/new/IoBd_7segX4.v"/>
+          <Attr Name="ImportTime" Val="1600636425"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/IoBd_Uart_RX.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Au_Io_UART_xil/Au_Io_UART_xil.srcs/sources_1/new/IoBd_Uart_RX.v"/>
@@ -118,6 +127,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/sha256sum_serial.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/sources_1/new/stream_sha256.v">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../sha256/Au_stream_sha256/Au_stream_sha256_xil.srcs/sources_1/new/stream_sha256.v"/>
@@ -127,24 +143,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/sha256sum_serial.v">
+      <File Path="$PSRCDIR/sources_1/new/top_7seg_Br.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="simulation"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/IoBd_7segX4.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../xil_7seg_Cu/xil_7seg_Cu.srcs/sources_1/new/IoBd_7segX4.v"/>
-          <Attr Name="ImportTime" Val="1600636425"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../xil_7seg_Cu/xil_7seg_Cu.srcs/sources_1/new/top_7seg_Br.v"/>
+          <Attr Name="ImportTime" Val="1600636793"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/bit_swap.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -152,6 +161,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/one_constant.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -159,6 +169,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/invert_bit.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -166,6 +177,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/four_constant.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -173,45 +185,38 @@
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Au_Io_UART_sha256sum_1/Au_Io_UART_sha256sum_1.bd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0/Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0/Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0"/>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_one_constant_0_0/Au_Io_UART_sha256sum_1_one_constant_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_one_constant_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0.xci">
           <Proxy FileSetName="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_bit_swap_0_0/Au_Io_UART_sha256sum_1_bit_swap_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_bit_swap_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_invert_bit_0_0/Au_Io_UART_sha256sum_1_invert_bit_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_invert_bit_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_four_constant_0_0/Au_Io_UART_sha256sum_1_four_constant_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_four_constant_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_one_constant_0_0/Au_Io_UART_sha256sum_1_one_constant_0_0.xci">
-          <Proxy FileSetName="Au_Io_UART_sha256sum_1_one_constant_0_0"/>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0/Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0.xci">
           <Proxy FileSetName="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_four_constant_0_0/Au_Io_UART_sha256sum_1_four_constant_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_four_constant_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_invert_bit_0_0/Au_Io_UART_sha256sum_1_invert_bit_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_invert_bit_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0/Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="Au_Io_UART_sha256sum_1.bd" FileRelPathName="ip/Au_Io_UART_sha256sum_1_bit_swap_0_0/Au_Io_UART_sha256sum_1_bit_swap_0_0.xci">
+          <Proxy FileSetName="Au_Io_UART_sha256sum_1_bit_swap_0_0"/>
+        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/Au_Io_UART_sha256sum_1/hdl/Au_Io_UART_sha256sum_1_wrapper.v">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/top_7seg_Br.v">
-        <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../xil_7seg_Cu/xil_7seg_Cu.srcs/sources_1/new/top_7seg_Br.v"/>
-          <Attr Name="ImportTime" Val="1600636793"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
@@ -240,7 +245,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_wrapper"/>
+        <Option Name="TopModule" Val="top_7seg_Br"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -289,9 +294,15 @@
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
-    <FileSet Name="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0">
+    <FileSet Name="Au_Io_UART_sha256sum_1_one_constant_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_one_constant_0_0">
       <Config>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0"/>
+        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_one_constant_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
+    <FileSet Name="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0">
+      <Config>
+        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -301,21 +312,9 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Au_Io_UART_sha256sum_1_invert_bit_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_invert_bit_0_0">
+    <FileSet Name="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0">
       <Config>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_invert_bit_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="Au_Io_UART_sha256sum_1_one_constant_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_one_constant_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_one_constant_0_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="Au_Io_UART_sha256sum_1_bit_swap_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_bit_swap_0_0">
-      <Config>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_bit_swap_0_0"/>
+        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -325,15 +324,21 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
+    <FileSet Name="Au_Io_UART_sha256sum_1_invert_bit_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_invert_bit_0_0">
+      <Config>
+        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_invert_bit_0_0"/>
+        <Option Name="UseBlackboxStub" Val="1"/>
+      </Config>
+    </FileSet>
     <FileSet Name="Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0">
       <Config>
         <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0">
+    <FileSet Name="Au_Io_UART_sha256sum_1_bit_swap_0_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Au_Io_UART_sha256sum_1_bit_swap_0_0">
       <Config>
-        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0"/>
+        <Option Name="TopModule" Val="Au_Io_UART_sha256sum_1_bit_swap_0_0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -367,9 +372,23 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -379,7 +398,9 @@
     </Run>
     <Run Id="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -387,29 +408,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -419,7 +422,21 @@
     </Run>
     <Run Id="Au_Io_UART_sha256sum_1_four_constant_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_four_constant_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_four_constant_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_four_constant_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
+        <Step Id="synth_design"/>
+      </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
+      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" IncludeInArchive="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -439,7 +456,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" Type="Ft3:Synth" SrcSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" Dir="$PRUNDIR/Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
           <Desc>Vivado Synthesis Defaults</Desc>
@@ -469,9 +486,30 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="Au_Io_UART_sha256sum_1_one_constant_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -488,7 +526,9 @@
     </Run>
     <Run Id="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_IoBd_Uart_RX_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -503,43 +543,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_invert_bit_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_one_constant_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_one_constant_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_one_constant_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-      <RQSFiles/>
-    </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_bit_swap_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -556,7 +564,28 @@
     </Run>
     <Run Id="Au_Io_UART_sha256sum_1_four_constant_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_four_constant_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_four_constant_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
+        <Step Id="init_design"/>
+        <Step Id="opt_design"/>
+        <Step Id="power_opt_design"/>
+        <Step Id="place_design"/>
+        <Step Id="post_place_power_opt_design"/>
+        <Step Id="phys_opt_design"/>
+        <Step Id="route_design"/>
+        <Step Id="post_route_phys_opt_design"/>
+        <Step Id="write_bitstream"/>
+      </Strategy>
+      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2020"/>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
+      <RQSFiles/>
+    </Run>
+    <Run Id="Au_Io_UART_sha256sum_1_invert_bit_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_invert_bit_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_invert_bit_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+      <Strategy Version="1" Minor="2">
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -590,7 +619,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_sha256sum_serial_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
+    <Run Id="Au_Io_UART_sha256sum_1_bit_swap_0_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tftg256-1" ConstrsSet="Au_Io_UART_sha256sum_1_bit_swap_0_0" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="Au_Io_UART_sha256sum_1_bit_swap_0_0_synth_1" IncludeInArchive="false" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
           <Desc>Default settings for Implementation.</Desc>

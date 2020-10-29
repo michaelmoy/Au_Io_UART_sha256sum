@@ -11,13 +11,13 @@
     },
     "design_tree": {
       "IoBd_Uart_RX_0": "",
+      "IoBd_Uart_TX_0": "",
+      "sha256sum_serial_0": "",
       "IoBd_7segX4_0": "",
+      "bit_swap_0": "",
       "one_constant_0": "",
       "invert_bit_0": "",
-      "bit_swap_0": "",
-      "four_constant_0": "",
-      "IoBd_Uart_TX_0": "",
-      "sha256sum_serial_0": ""
+      "four_constant_0": ""
     },
     "ports": {
       "clk": {
@@ -149,178 +149,6 @@
           }
         }
       },
-      "IoBd_7segX4_0": {
-        "vlnv": "xilinx.com:module_ref:IoBd_7segX4:1.0",
-        "xci_name": "Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "IoBd_7segX4",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "reset",
-                "value_src": "constant"
-              },
-              "CLK_DOMAIN": {
-                "value": "Au_Io_UART_sha256sum_1_clk",
-                "value_src": "default_prop"
-              },
-              "FREQ_HZ": {
-                "value": "100000000",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "reset": {
-            "type": "rst",
-            "direction": "I"
-          },
-          "seg3_hex": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "seg3_dp": {
-            "direction": "I"
-          },
-          "seg3_ena": {
-            "direction": "I"
-          },
-          "seg2_hex": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "seg2_dp": {
-            "direction": "I"
-          },
-          "seg2_ena": {
-            "direction": "I"
-          },
-          "seg1_hex": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "seg1_dp": {
-            "direction": "I"
-          },
-          "seg1_ena": {
-            "direction": "I"
-          },
-          "seg0_hex": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "seg0_dp": {
-            "direction": "I"
-          },
-          "seg0_ena": {
-            "direction": "I"
-          },
-          "bright": {
-            "direction": "I",
-            "left": "3",
-            "right": "0"
-          },
-          "seg_data": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          },
-          "seg_select": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
-      "one_constant_0": {
-        "vlnv": "xilinx.com:module_ref:one_constant:1.0",
-        "xci_name": "Au_Io_UART_sha256sum_1_one_constant_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "one_constant",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "one": {
-            "direction": "O"
-          }
-        }
-      },
-      "invert_bit_0": {
-        "vlnv": "xilinx.com:module_ref:invert_bit:1.0",
-        "xci_name": "Au_Io_UART_sha256sum_1_invert_bit_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "invert_bit",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in_val": {
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "default_prop"
-              }
-            }
-          },
-          "out_val": {
-            "direction": "O",
-            "parameters": {
-              "POLARITY": {
-                "value": "",
-                "value_src": "weak"
-              }
-            }
-          }
-        }
-      },
-      "bit_swap_0": {
-        "vlnv": "xilinx.com:module_ref:bit_swap:1.0",
-        "xci_name": "Au_Io_UART_sha256sum_1_bit_swap_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "bit_swap",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "in_d": {
-            "direction": "I",
-            "left": "7",
-            "right": "0"
-          },
-          "out_d": {
-            "direction": "O",
-            "left": "7",
-            "right": "0"
-          }
-        }
-      },
-      "four_constant_0": {
-        "vlnv": "xilinx.com:module_ref:four_constant:1.0",
-        "xci_name": "Au_Io_UART_sha256sum_1_four_constant_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "four_constant",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "bright": {
-            "direction": "O",
-            "left": "3",
-            "right": "0"
-          }
-        }
-      },
       "IoBd_Uart_TX_0": {
         "vlnv": "xilinx.com:module_ref:IoBd_Uart_TX:1.0",
         "xci_name": "Au_Io_UART_sha256sum_1_IoBd_Uart_TX_0_0",
@@ -445,6 +273,178 @@
             "right": "0"
           }
         }
+      },
+      "IoBd_7segX4_0": {
+        "vlnv": "xilinx.com:module_ref:IoBd_7segX4:1.0",
+        "xci_name": "Au_Io_UART_sha256sum_1_IoBd_7segX4_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IoBd_7segX4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "Au_Io_UART_sha256sum_1_clk",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "seg3_hex": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg3_dp": {
+            "direction": "I"
+          },
+          "seg3_ena": {
+            "direction": "I"
+          },
+          "seg2_hex": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg2_dp": {
+            "direction": "I"
+          },
+          "seg2_ena": {
+            "direction": "I"
+          },
+          "seg1_hex": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg1_dp": {
+            "direction": "I"
+          },
+          "seg1_ena": {
+            "direction": "I"
+          },
+          "seg0_hex": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg0_dp": {
+            "direction": "I"
+          },
+          "seg0_ena": {
+            "direction": "I"
+          },
+          "bright": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "seg_data": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          },
+          "seg_select": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "bit_swap_0": {
+        "vlnv": "xilinx.com:module_ref:bit_swap:1.0",
+        "xci_name": "Au_Io_UART_sha256sum_1_bit_swap_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "bit_swap",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in_d": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "out_d": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "one_constant_0": {
+        "vlnv": "xilinx.com:module_ref:one_constant:1.0",
+        "xci_name": "Au_Io_UART_sha256sum_1_one_constant_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "one_constant",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "one": {
+            "direction": "O"
+          }
+        }
+      },
+      "invert_bit_0": {
+        "vlnv": "xilinx.com:module_ref:invert_bit:1.0",
+        "xci_name": "Au_Io_UART_sha256sum_1_invert_bit_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "invert_bit",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "in_val": {
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "out_val": {
+            "direction": "O",
+            "parameters": {
+              "POLARITY": {
+                "value": "",
+                "value_src": "weak"
+              }
+            }
+          }
+        }
+      },
+      "four_constant_0": {
+        "vlnv": "xilinx.com:module_ref:four_constant:1.0",
+        "xci_name": "Au_Io_UART_sha256sum_1_four_constant_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "four_constant",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "bright": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -506,18 +506,18 @@
         "ports": [
           "clk",
           "IoBd_Uart_RX_0/clk",
-          "IoBd_7segX4_0/clk",
           "IoBd_Uart_TX_0/clk",
-          "sha256sum_serial_0/clk"
+          "sha256sum_serial_0/clk",
+          "IoBd_7segX4_0/clk"
         ]
       },
       "rst_n_1": {
         "ports": [
           "invert_bit_0/out_val",
-          "IoBd_7segX4_0/reset",
           "IoBd_Uart_RX_0/rst",
           "IoBd_Uart_TX_0/rst",
-          "sha256sum_serial_0/rst"
+          "sha256sum_serial_0/rst",
+          "IoBd_7segX4_0/reset"
         ]
       },
       "IoBd_Uart_TX_0_tx_out": {
@@ -559,13 +559,13 @@
       "one_constant_0_one": {
         "ports": [
           "one_constant_0/one",
-          "IoBd_7segX4_0/seg0_ena",
-          "IoBd_7segX4_0/seg1_ena",
-          "IoBd_7segX4_0/seg1_dp",
-          "IoBd_7segX4_0/seg2_ena",
-          "IoBd_7segX4_0/seg2_dp",
+          "IoBd_7segX4_0/seg3_dp",
           "IoBd_7segX4_0/seg3_ena",
-          "IoBd_7segX4_0/seg3_dp"
+          "IoBd_7segX4_0/seg2_dp",
+          "IoBd_7segX4_0/seg2_ena",
+          "IoBd_7segX4_0/seg1_dp",
+          "IoBd_7segX4_0/seg1_ena",
+          "IoBd_7segX4_0/seg0_ena"
         ]
       },
       "rst_n_2": {
